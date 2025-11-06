@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🍭 Candy Ross 🍭</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
     <style>
         /* ======================================================= */
         /* ESTILOS BASE DO JOGO */
@@ -361,10 +362,10 @@
 
     <!-- Estrutura do Jogo -->
     <div id="start-screen"> 
-        <h1> 🍭 Candy Ross 🍭</h1> 
-        <button id="play-btn">Jogar</button> 
-        <button id="show-instructions" class="mt-8 text-lg bg-transparent text-[#ff4da6] border-2 border-[#ff4da6] py-2 px-4 rounded-lg hover:bg-[#ff4da6] hover:text-white transition">Instruções</button>
-    </div>
+    <h1> 🍭 <span id="candy-easter-egg">Candy</span> Ross 🍭</h1> 
+    <button id="play-btn">Jogar</button> 
+    <button id="show-instructions" class="mt-8 text-lg bg-transparent text-[#ff4da6] border-2 border-[#ff4da6] py-2 px-4 rounded-lg hover:bg-[#ff4da6] hover:text-white transition">Instruções</button>
+</div>
 
     <h1 style="display:none;" id="title-game"> 🍭 Candy Ross 🍭</h1>
     <div id="top-info" style="display:none;">
@@ -400,6 +401,7 @@
     <div id="game-container" style="display:none;">
         <!-- Container para as notificações de emoji -->
         <div id="candy-notifications"></div> 
+        
         
         <canvas id="tetris" width="240" height="400"></canvas>
         <div id="gameover">
@@ -457,6 +459,7 @@
         
          <h3><strong>BEM-VINDOS AO CANDY ROSS! Neste desafio, cada bloco equivale a um pirulito. O seu objetivo é quebrá-los.<strong></h3>
         <p>Este é um jogo de encaixar blocos. Seu objetivo principal é completar linhas horizontais (10 pontos) e, principalmente, completar um quadrado sólido de 5x5 blocos(super pontos) em qualquer lugar da arena!</p>
+        <p>Efeito Sonoro: kwaii Drops - Autor: PoorKidMusic.</p>
 
         <h3><br><strong>Controles:</strong></br></h3>
         <p><br><strong>Use as teclas de seta ou os botões na tela:</strong></br></p>
@@ -619,7 +622,7 @@
 
         // =======================================================
         // LÓGICA DO JOGO (FUNÇÃO STARTGAME)
-        // =======================================================
+        // =======================================================f
         function startGame(highScoreDisplay, bestTimeDisplay) {
             const canvas = document.getElementById('tetris'); 
             const context = canvas.getContext('2d');
